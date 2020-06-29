@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FileBrowser</title>
+    <style>
+        h2 {text-align: center;}
+        h3 {text-align: center;}
+    </style>
+</head>
+<body>
+
+<h2>FileBrowser</h2>
+<h3>Introduction</h3>
+
+<p>FileBrowser is program that is able to delete, move and copy files in your file system.
+    We can browser throught filesystem and operate with currently opened folder. We can also be doing file operations under regular expressions. We also have added basic text reader and text creator.
+</p>
+<p>
+    When user opens this program he will enter an Main Menu. In this menu he can start Browsing by typing 1 or he can start using regular expressitions right away by typing an 2. If an error happend while browsing user can always leave Browser by typing <em>exit</em> and then typing <em>browser_reset</em>. This action is going to reset an previously opened path and will set it to nothing so when user wants to go to Browser again he will need to set up default path again.
+
+</p>
+<h3>Regural expressitions examples</h3>
+<p>
+    When user decides to try to use an regular expressitions he will need to follow few rules.
+</p>
+<p>
+    1. input has straight rules. At first we are saying what operation we want to do. If we want to delete files we will type <strong>delete</strong>. The same is with an move or copy.
+</p>
+<p>
+    2. Now we will type path of folder in which we will be selecting by an reg. exp. for example if we want to delete in /home/progtest/ we type <strong>/home/progtest/</strong>
+</p>
+<p>
+    3. And now we need to type an regular expressition that will select files we will operate with for example - <strong>.*</strong>. We can also create reg. exp. like <strong>test[^ ]?</strong>. This regular expressition will select only files that start with name <strong>test</strong> and continue with not a space.
+</p>
+<p>
+    So we will ended up with command like this : <strong>delete /home/progtest/ .*</strong> or <strong> delete /home/progtest/ test[^ ]? </strong>
+</p>
+<h3>Browser</h3>
+<p>
+    Browser is made to explore in filesystem. We are also able to delete move and copy files with Browser. We always have multiple ways how to operate with files. Examples:
+</p>
+<p>
+    We are in folder called /home/. In this folder there is only 2 folders - test and progtest. We can enter both of them by just typing their name or we can always type an full path and we will enter the full path.
+    We can also get an size of currently opened folder, by typing <strong>size</strong>. We decided open progtest. When we entered this folder we can see multiple folder and some files. If we want to <strong>delete</strong> some files, we can type <strong>delete</strong> and then follow an instructions we are getting. If you want to exit the operation process you can simply type <strong>exit</strong>. Copy and move is the same. If you want to exit currently opened folder and go back, just type <strong>..</strong> .
+</p>
+<p>
+    In Browser we can also create directory by typing an <strong>mkdir</strong>. We can also create an symlink by typing <strong>makelink</strong> and create textfile by command <strong>maketxt</strong>.
+</p>
+
+<h3>Class description</h3>
+<img src="pics.png" alt="Class Diagram">
+<h4>COperations and CData</h4>
+<p>
+    COperations is an abstract class. This class is parent of CMove, CDelete and CCopy.
+    In COperatation we have method void Run(), this method is implemented and runs UserInput then ValidatePath and last Execute methods, returns bool true on success.
+    UserInput, ValidatePath and Execute are abstract methods and every child must have them implemented.
+
+</p>
+<p>
+    CData is an abstact class. THis class is parent of CFile, CFolder and CSymLink.
+    These classes are representing objects in filesystem. We have an abstract method void print(), that will print out some important data about this CData or its child.
+</p>
+
+<h4>CFile CFolder CSymLink</h4>
+<p>
+    These classes are children of CData.
+    CFolder is represeting folder in filesystem.
+    CFolder can be created by constructor with an path parameter. Everything inside of CFolder is represented by map, this map has key
+    as name of file object - like file, folder or symlink. To every key we have vector of CData, these can be represented by classes CFile, CFolder and CSymLink.
+    We have method print(), this method will print just a name of folder and method PrintAll will print every single sub-file/folder in current folder.
+    We are having some methods like UpdateFolder - this method is gonna update content of folder incase it has changed from last time we did printed something into terminal.
+    Then we have an method called getSize() - this method is recursive call thats going throught all subfolders are returning their size.
+
+</p>
+<p>
+    CFile is representation of an file in filesystem. This class is storing an struct stat m_Info. In this struct we can find all the important info about our file.
+</p>
+
+<h4>CDelete CMove and CCopy</h4>
+<p>All of these classes are some sort of an operation that we can do in our filesystem. They all are inherited by COperations because they all have simmilar methods. We have an polymorfism method called UserInput() that is gonna be different for every inherited class.</p>
+<p>
+    The implementation of these classes is mostly similar. Every class inherited by COperation must have default constructor, UserInputs, ValidatePaths and Execute methods.
+
+    We are getting Input from user by UserInput() then we are checking if the input is valid and paths are valid aswell with ValidatePaths().
+    In this method we are also checking our currently opened folder if we dont have some files/folders same named as user called them in UserInput.
+    Example user typed delete and then not full path but only the name of file inside of our currently opened folder.
+    This method should find it check it and then set Path to delete to full path to the file we are deleting.
+    Its almost the same with some exceptions in CCopy and CMove.
+    Then we are executing the class functionality with Execute method.
+    The only big difference is in ValidatePaths because for example in CDelete if we are deleting an path that we have currently opened it may ended up with some errors.
+    So the Validate Paths is always gonna check something different.
+    In CCopy we are checking what are we copying and where because it may ended up with never ending loop if we are copying into sub-folder.
+    If you want to leave an process of for example Moving you can do it whenever by typing <strong>exit</strong>.
+</p>
+
+<h4>CInterface</h4>
+<p>
+    CInterface is class thats working as a switch. When we start the program the CInterface represents MainMenu where user can decide if he wants to enter Browser or Regular Expressitions. So CInterface is taking users input and then printing error if failed or just starting CBrowser or CRegexp. CInterface constructor is an while(running) loop then we will be printing mainMenu and getting UsersInput. and Processing Users Input with ProcessInput(const string & in_result) method.
+</p>
+
+<h4>CRegExp</h4>
+<p>
+    CRegExp is taking care of an operations under regular expresitions. Its getting usersInput with UserInput(), if the input is not <strong>exit</strong> then we will parse the input via sscanf() and method ParseInput(). If we are using Operation thats not delete so move or copy we will ask user whats the target path. Then we will validate paths with ValidatePaths() method and then we are setting targets of class variables. Then we are simply executing command with an Execute() method. At the end we are clearing our strings and vectors with Clear() method. We are also using method getTargets that returning vector of all files inside of our code folder example -> /home/progtest/ will return vector of strings that will contain all filenames of /home/progtest/. Then we are going throught this vector and taking only filenames that are fine according to our Regular exp. Method thats doing the selection of result vector is setTargets.
+</p>
+<h4>CBrowser</h4>
+<p>
+    CBrowser is taking care of browsing in filesystem and operating with files.
+    So when we are creating CBrowser we will pass it string parameter that is representing path that was set up by CInterface::BrowserSetUp.
+    When we create CBrowser we are also running method InitializeOperations(), this method is gonna add any COperatations child to map with an string key in map.
+    When user wants to use this class for example CDelete, he will need to type the key string to access its method and functionality. This makes it super easy to add new Classes and methods.
+    We will print currently opened folder and get users command. He can enter an subfolder by typing an name or he can type full-path to folder.
+    He can also type commands like <strong>delete , copy , move , mkdir , makelink, maketxt , size</strong>.
+    <strong>mkdir</strong> is creating folder of tree of folders, <strong>makelink</strong> can create sym link and <strong>maketxt</strong> can create or display txt file.
+    Or exit browsing by typing an <strong>exit</strong> and when he comes back he will start where he ended.
+    We have method Execute thats getting bool if function has been done successfully or if it failed and we are giving it CFolder parameter incase we want to update this folder.
+    If user didnt type any command we will try to find folder with the name eh typed.
+    If we will find folder we will print it and wait for next command otherwise we will print an error.
+</p>
+
+
+
+
+
+</body>
+
+</html>

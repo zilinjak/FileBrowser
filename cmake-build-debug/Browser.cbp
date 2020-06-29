@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Browser"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/zilinjak/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/zilinjak/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/zilinjak/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/zilinjak/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/zilinjak/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Browser">
+				<Option output="C:/zilinjak/cmake-build-debug/Browser.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/zilinjak/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/zilinjak/cmake-build-debug/Makefile&quot;  VERBOSE=1 Browser"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/zilinjak/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/zilinjak/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/zilinjak/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Browser/fast">
+				<Option output="C:/zilinjak/cmake-build-debug/Browser.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/zilinjak/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/zilinjak/cmake-build-debug/Makefile&quot;  VERBOSE=1 Browser/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/zilinjak/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/zilinjak/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/zilinjak/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/zilinjak/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/zilinjak/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/zilinjak/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/zilinjak/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/zilinjak/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/zilinjak/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/zilinjak/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/zilinjak/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/zilinjak/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/zilinjak/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/zilinjak/src/CBrowser.cpp">
+			<Option target="Browser"/>
+		</Unit>
+		<Unit filename="C:/zilinjak/src/CBrowser.h">
+			<Option target="Browser"/>
+		</Unit>
+		<Unit filename="C:/zilinjak/src/CCopy.cpp">
+			<Option target="Browser"/>
+		</Unit>
+		<Unit filename="C:/zilinjak/src/CCopy.h">
+			<Option target="Browser"/>
+		</Unit>
+		<Unit filename="C:/zilinjak/src/CData.cpp">
+			<Option target="Browser"/>
+		</Unit>
+		<Unit filename="C:/zilinjak/src/CData.h">
+			<Option target="Browser"/>
+		</Unit>
+		<Unit filename="C:/zilinjak/src/CDelete.cpp">
+			<Option target="Browser"/>
+		</Unit>
+		<Unit filename="C:/zilinjak/src/CDelete.h">
+			<Option target="Browser"/>
+		</Unit>
+		<Unit filename="C:/zilinjak/src/CFile.cpp">
+			<Option target="Browser"/>
+		</Unit>
+		<Unit filename="C:/zilinjak/src/CFile.h">
+			<Option target="Browser"/>
+		</Unit>
+		<Unit filename="C:/zilinjak/src/CFolder.cpp">
+			<Option target="Browser"/>
+		</Unit>
+		<Unit filename="C:/zilinjak/src/CFolder.h">
+			<Option target="Browser"/>
+		</Unit>
+		<Unit filename="C:/zilinjak/src/CInterface.cpp">
+			<Option target="Browser"/>
+		</Unit>
+		<Unit filename="C:/zilinjak/src/CInterface.h">
+			<Option target="Browser"/>
+		</Unit>
+		<Unit filename="C:/zilinjak/src/CMove.cpp">
+			<Option target="Browser"/>
+		</Unit>
+		<Unit filename="C:/zilinjak/src/CMove.h">
+			<Option target="Browser"/>
+		</Unit>
+		<Unit filename="C:/zilinjak/src/COperations.cpp">
+			<Option target="Browser"/>
+		</Unit>
+		<Unit filename="C:/zilinjak/src/COperations.h">
+			<Option target="Browser"/>
+		</Unit>
+		<Unit filename="C:/zilinjak/src/CRegExp.cpp">
+			<Option target="Browser"/>
+		</Unit>
+		<Unit filename="C:/zilinjak/src/CRegExp.h">
+			<Option target="Browser"/>
+		</Unit>
+		<Unit filename="C:/zilinjak/src/CSymlink.cpp">
+			<Option target="Browser"/>
+		</Unit>
+		<Unit filename="C:/zilinjak/src/CSymlink.h">
+			<Option target="Browser"/>
+		</Unit>
+		<Unit filename="C:/zilinjak/src/main.cpp">
+			<Option target="Browser"/>
+		</Unit>
+		<Unit filename="C:/zilinjak/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
